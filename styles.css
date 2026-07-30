@@ -1,0 +1,303 @@
+:root{
+    --bg: #EEF2F6;
+    --grid-line: #C9D5E2;
+    --panel: #FFFFFF;
+    --panel-edge: #D8E1EA;
+    --ink: #16233A;
+    --ink-soft: #4C5C72;
+    --amber: #E2A93B;
+    --amber-deep: #B9822A;
+    --teal: #2F6F62;
+    --teal-soft: #E4EFEC;
+    --red: #B75C52;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --display: 'Space Grotesk', sans-serif;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 100% 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 100%,
+      var(--bg);
+    background-blend-mode: normal;
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before{
+    content:"";
+    position: fixed; inset:0;
+    background: var(--bg);
+    opacity: 0.55;
+    z-index:-1;
+  }
+
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  /* ---------- Nameplate header ---------- */
+  .nameplate{
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 6px;
+    padding: 36px clamp(20px,4vw,44px);
+    position: relative;
+    overflow: hidden;
+  }
+  .nameplate::after{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:4px;
+    background: repeating-linear-gradient(90deg, var(--amber) 0 14px, transparent 14px 22px);
+  }
+  .nameplate-inner{
+    display:flex;
+    align-items:center;
+    gap: clamp(20px, 4vw, 36px);
+  }
+  .nameplate-text{ flex:1; min-width:0; }
+  .photo-frame{
+    flex-shrink:0;
+    width: clamp(84px, 14vw, 112px);
+    height: clamp(84px, 14vw, 112px);
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--bg);
+    border: 2px solid var(--amber);
+    position: relative;
+  }
+  .photo-frame::before{
+    content:"";
+    position:absolute;
+    inset:-7px;
+    border-radius: 50%;
+    border: 1px dashed var(--panel-edge);
+  }
+  .photo-frame img{
+    width:100%; height:100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display:block;
+  }
+  @media (max-width: 520px){
+    .nameplate-inner{ flex-direction: column-reverse; text-align:center; }
+    .pins{ justify-content:center; }
+  }
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--amber-deep);
+    text-transform: uppercase;
+    display:flex; align-items:center; gap:8px;
+    margin-bottom: 14px;
+  }
+  .eyebrow .dot{
+    width:7px; height:7px; background: var(--amber); display:inline-block;
+    border-radius: 1px;
+  }
+  h1{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 44px);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .role{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--teal);
+    margin-top: 6px;
+  }
+
+  .pins{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top: 24px;
+  }
+  .pin{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--bg);
+    border: 1px solid var(--panel-edge);
+    border-radius: 4px;
+    padding: 7px 12px;
+    text-decoration:none;
+    display:inline-flex; align-items:center; gap:6px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .pin:hover{ border-color: var(--teal); color: var(--teal); }
+  .pin span{ color: var(--amber-deep); }
+
+  /* ---------- signature scope trace ---------- */
+  .scope{
+    width:100%;
+    height: 64px;
+    margin: 40px 0 8px;
+    display:block;
+  }
+  .scope path{
+    fill:none;
+    stroke: var(--teal);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.2s ease forwards .2s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .scope path{ animation:none; stroke-dashoffset:0; }
+  }
+
+  /* ---------- section shell ---------- */
+  section{ margin-top: 40px; }
+  .field-label{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 14px;
+  }
+  .field-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: var(--panel-edge);
+  }
+
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 6px;
+    padding: 24px clamp(18px,3vw,32px);
+  }
+
+  .resumo p{ color: var(--ink-soft); font-size: 15.5px; }
+
+  /* ---------- experience ---------- */
+  .job-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    flex-wrap:wrap; gap:8px 16px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--panel-edge);
+  }
+  .job-title{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .job-title span{ color: var(--teal); font-weight:500; }
+  .job-period{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--bg);
+    border: 1px solid var(--panel-edge);
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+  ul.bullets{ list-style:none; }
+  ul.bullets li{
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 11px;
+    font-size: 14.8px;
+    color: var(--ink);
+  }
+  ul.bullets li::before{
+    content:"";
+    position:absolute; left:0; top:6px;
+    width:9px; height:9px;
+    background: var(--amber);
+    border-radius: 2px;
+  }
+
+  /* ---------- skills ---------- */
+  .skill-group{ margin-bottom: 18px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group h3{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--bg);
+    border: 1px solid var(--panel-edge);
+    border-radius: 4px;
+    padding: 6px 11px;
+    color: var(--ink);
+  }
+
+  /* ---------- education status chips ---------- */
+  .edu-row{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; padding: 12px 0;
+    border-bottom: 1px dashed var(--panel-edge);
+  }
+  .edu-row:last-child{ border-bottom:none; }
+  .edu-name{ font-size: 14.8px; }
+  .status{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    padding: 4px 9px;
+    border-radius: 4px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .status.ok{ background: var(--teal-soft); color: var(--teal); }
+  .status.wip{ background: #FBF0DC; color: var(--amber-deep); }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top: 56px;
+    text-align:center;
+  }
+  .print-btn{
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    background: var(--ink);
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    padding: 12px 22px;
+    cursor:pointer;
+    transition: background .15s ease;
+  }
+  .print-btn:hover{ background: var(--teal); }
+  .fineprint{
+    margin-top:18px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-soft);
+  }
+
+  @media print{
+    body{ background: #fff; }
+    .scope{ display:none; }
+    .print-btn{ display:none; }
+    .wrap{ padding: 0; }
+  }
+
+  @media (max-width: 560px){
+    .job-head{ flex-direction: column; align-items:flex-start; }
+  }
