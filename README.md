@@ -7,14 +7,14 @@ joaoagte.github.io](https://joaoagte.github.io/)
 ---
  📌 O projeto
 
-Este projeto nasceu de uma necessidade minha em de ter um currículo digital, responsivo e fácil de compartilhar com recrutadores, indo além do PDF tradicional, o layout foi inspirado em painéis de instrumentação industrial (datasheets, visores de teste).
+Este projeto nasceu de uma necessidade minha em de ter um currículo digital, responsivo e fácil de compartilhar com recrutadores, indo além do PDF tradicional, o layout foi inspirado em painéis de instrumentação industrial (datasheets e visores de teste).
 
  🛠️Ferramentas utilizadas
 
-- **HTML5** — estrutura semântica do conteúdo
-- **CSS3** — layout responsivo (Flexbox), variáveis CSS, animações (`@keyframes`), grid de fundo
-- **JavaScript** — geração de PDF via `window.print()`
-- **Google Fonts** — tipografia (Space Grotesk, IBM Plex Sans, IBM Plex Mono)
+- HTML5 — estrutura semântica do conteúdo
+- CSS3 — layout responsivo (Flexbox), variáveis CSS, animações (`@keyframes`), grid de fundo
+- JavaScript — geração de PDF via `window.print()`
+- Google Fonts — tipografia (Space Grotesk, IBM Plex Sans, IBM Plex Mono)
 
 ✨ Funcionalidades
 
