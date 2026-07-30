@@ -5,7 +5,7 @@ Site pessoal de currículo, desenvolvido do zero em **HTML, CSS e JavaScript**, 
 joaoagte.github.io](https://joaoagte.github.io/)
 
 ---
- 📌 Sobre o projeto
+ 📌 O projeto
 
 Este projeto nasceu de uma necessidade minha em de ter um currículo digital, responsivo e fácil de compartilhar com recrutadores, indo além do PDF tradicional, o layout foi inspirado em painéis de instrumentação industrial (datasheets, visores de teste).
 
