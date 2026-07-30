@@ -7,7 +7,7 @@ joaoagte.github.io](https://joaoagte.github.io/)
 ---
  📌 Sobre o projeto
 
-Este projeto nasceu da necessidade de ter um currículo digital, responsivo e fácil de compartilhar com recrutadores, indo além do PDF tradicional, o layout foi inspirado em painéis de instrumentação industrial (datasheets, visores de teste).
+Este projeto nasceu de uma necessidade minha em de ter um currículo digital, responsivo e fácil de compartilhar com recrutadores, indo além do PDF tradicional, o layout foi inspirado em painéis de instrumentação industrial (datasheets, visores de teste).
 
  🛠️Ferramentas utilizadas
 
@@ -24,7 +24,7 @@ Este projeto nasceu da necessidade de ter um currículo digital, responsivo e f�
 - ✅ Seções organizadas: resumo, experiência, habilidades, formação e projetos
 - ✅ Sem dependências externas de build — um único arquivo `index.html`
 
-🚀 Como rodar localmente
+🚀 Para rodar localmente
 
 ```bash
 git clone https://github.com/joaoAGTe/joaoAGTe.github.io.git
